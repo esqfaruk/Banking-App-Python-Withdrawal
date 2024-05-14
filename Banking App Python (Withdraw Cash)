@@ -1,0 +1,29 @@
+account = Account("Muhammet Faruk Karaaslan",0123456789,2600000000)
+class Account:
+
+    def __init__(self,fullname,number,balance):
+        self.fullname = fullname
+        self.number = number
+        self.balance = balance
+
+    def AccountInformation(self):
+        print("Name: ",self.fullname)
+        print("Number: ",self.number)
+        print("Balance: ",self.balance)
+
+    def withdraw(self,amount):
+        if (self.balance - amount < 0):
+            print("Insufficient Funds...")
+        else:
+            self.balance -= amount
+            print("New Balance:",self.balance)
+
+    def deposit(self,amount):
+        self.balance += amount
+        print("New Balance:",self.balance)
+
+account = Account("Muhammet Faruk Karaaslan",123456789,2600000000)
+account.AccountInformation()
+
+account.withdraw(6000000)
+account.AccountInformation()
